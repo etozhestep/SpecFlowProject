@@ -35,7 +35,7 @@ namespace specFlowProject.Steps
         [Then(@"The page '([^']*)' should be opened")]
         public void PageShouldBeOpened(string title)
         {
-            Assert.IsTrue(GettingStartedPage.Instance.IsPageTitleDisplayed(title), "Page title for the page is not displayed");
+            Assert.IsTrue(ReleasesPage.Instance.IsPageTitleDisplayed(title), "Page title for the page is not displayed");
         }
 
         [AfterTestRun]
