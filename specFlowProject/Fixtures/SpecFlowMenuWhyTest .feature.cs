@@ -20,22 +20,22 @@ namespace specFlowProject.Fixtures
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.9.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("SpecFlowMenuTest")]
-    public partial class SpecFlowMenuTestFeature
+    [NUnit.Framework.DescriptionAttribute("SpecFlowMenuWhyTest")]
+    public partial class SpecFlowMenuWhyTestFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
         private static string[] featureTags = ((string[])(null));
         
-#line 1 "SpecFlowMenuTest.feature"
+#line 1 "SpecFlowMenuWhyTest .feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Fixtures", "SpecFlowMenuTest", "In order to easily find needed documentation\r\nAs a specflow user\r\nI want to be ab" +
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Fixtures", "SpecFlowMenuWhyTest", "In order to easily find needed documentation\r\nAs a specflow user\r\nI want to be ab" +
                     "le to navigate to pages through main menu", ProgrammingLanguage.CSharp, featureTags);
             testRunner.OnFeatureStart(featureInfo);
         }
@@ -75,16 +75,24 @@ namespace specFlowProject.Fixtures
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Clicking Getting Started option from the main menu should open Getting Started pa" +
-            "ge")]
+        [NUnit.Framework.DescriptionAttribute("Clicking menu option from the main menu should open corresponding page")]
         [NUnit.Framework.CategoryAttribute("smoke")]
-        public void ClickingGettingStartedOptionFromTheMainMenuShouldOpenGettingStartedPage()
+        [NUnit.Framework.TestCaseAttribute("Why SpecFlow?", "Testers", "cycle", null)]
+        [NUnit.Framework.TestCaseAttribute("Why SpecFlow?", "Developers", "Simple", null)]
+        public void ClickingMenuOptionFromTheMainMenuShouldOpenCorrespondingPage(string menuItem, string subMenuItem, string title, string[] exampleTags)
         {
-            string[] tagsOfScenario = new string[] {
+            string[] @__tags = new string[] {
                     "smoke"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Clicking Getting Started option from the main menu should open Getting Started pa" +
-                    "ge", null, tagsOfScenario, argumentsOfScenario, featureTags);
+            argumentsOfScenario.Add("menuItem", menuItem);
+            argumentsOfScenario.Add("subMenuItem", subMenuItem);
+            argumentsOfScenario.Add("title", title);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Clicking menu option from the main menu should open corresponding page", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 8
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -99,13 +107,13 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.Given("I open official Specflow web site", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 10
- testRunner.When("I hover the \'Docs\' menu item from the main menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When(string.Format("I hover the \'{0}\' menu item from the main menu", menuItem), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 11
- testRunner.And("I click \'Getting Started\' option from the main menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I click \'{0}\' option from the main menu", subMenuItem), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 12
- testRunner.Then("The page \'Getting Started\' should be opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then(string.Format("The page \'{0}\' should be opened", title), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
