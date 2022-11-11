@@ -9,9 +9,9 @@ namespace specFlowProject.Pages
         private string URL => "https://specflow.org";
         private string SubMenuItemXpath => "//ul[@class='sub-menu']/child::li[contains(@class,'menu-item')]//a";
         private string MainMenuItemXpath => "//ul[@id='menu-main-navigation']/child::li[contains(@class,'menu-item')]";
-        private By DocsDropdown = By.XPath("//a[contains(text(),'Docs')]");
 
-        private static HomePage? homePage;
+
+        private static HomePage homePage;
         public static HomePage Instance => homePage ?? (homePage = new HomePage());
 
         public void OpenSpecflowHomePage()
