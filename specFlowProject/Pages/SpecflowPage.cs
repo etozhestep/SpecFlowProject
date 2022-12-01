@@ -1,18 +1,12 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
 using specFlowProject.Base;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using TechTalk.SpecFlow.Plugins;
 
 namespace specFlowProject.Pages
 {
     public class SpecflowPage : BasePage
     {
-        private string fieldXpath => "//input[@type='text']";
+        private string fieldXpath => "//input[@type='text']"\;
         private string popupSearchFieldXpath => "//input[@class='search__outer__input']";
         private string searchingSignXpath => "//strong[text()='Searching ....']";
         private string searchResultsXpath => "//h2[@class='search__result__title']//span";
@@ -22,7 +16,7 @@ namespace specFlowProject.Pages
 
         public void ClickOnField(string fieldName)
         {
-           var fieldElement = FindElements(By.XPath(fieldXpath)).First(x => x.GetAttribute("placeholder").Equals(fieldName));
+            var fieldElement = FindElements(By.XPath(fieldXpath)).First(x => x.GetAttribute("placeholder").Equals(fieldName));
             fieldElement.Click();
         }
         public void EnterTextOnPopupSearchField(string textToSearch)

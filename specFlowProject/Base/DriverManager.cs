@@ -1,12 +1,11 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-using TechTalk.SpecFlow;
 
 namespace specFlowProject.Base
 {
     public class DriverManager
     {
-        private static ThreadLocal <IWebDriver> driver = new ThreadLocal<IWebDriver>();
+        private static ThreadLocal<IWebDriver> driver = new ThreadLocal<IWebDriver>();
 
         public static IWebDriver Instance()
         {

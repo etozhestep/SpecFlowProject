@@ -1,6 +1,5 @@
 using specFlowProject.Base;
 using specFlowProject.Pages;
-using System;
 using TechTalk.SpecFlow;
 
 namespace specFlowProject.Steps
@@ -23,7 +22,7 @@ namespace specFlowProject.Steps
         [When(@"I pick up search result '([^']*)'")]
         public void PickUpNecessarySearchResult(string resultNameToPick)
         {
-         SpecflowPage.Instance.SelectItemFromSearchResults(resultNameToPick);
+            SpecflowPage.Instance.SelectItemFromSearchResults(resultNameToPick);
         }
         [AfterScenario]
         public static void AfterTestRun()
